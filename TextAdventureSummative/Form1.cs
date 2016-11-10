@@ -1,5 +1,6 @@
-﻿///
-
+﻿/// Satvir Uppal
+/// November 10th 2016
+/// Escape From The Lost Nation: A Text Adventure
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,11 @@ namespace TextAdventureSummative
 {
     public partial class Form1 : Form
     {
-        int scene = 0;
+        
+        int scene = 0;                       //Varible Setup
         Random randGen = new Random();
         int attackValue, stealthValue;
+                                                                                //Sound Setup
         SoundPlayer scene2 = new SoundPlayer(Properties.Resources.Scene_2);
         SoundPlayer scene4 = new SoundPlayer(Properties.Resources.Scene_4);
         SoundPlayer scene5 = new SoundPlayer(Properties.Resources.Scene_5);
@@ -33,6 +36,7 @@ namespace TextAdventureSummative
         public Form1()
         {
             InitializeComponent();
+            //Opening Scene 
             outputLabel.Text = "You wake up in a dark room with a small trap door and a single torch. Do you go into the trap door or stay in the room?";
             redLabel.Text = "LEAVE";
             blueLabel.Text = "STAY";
