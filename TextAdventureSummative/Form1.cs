@@ -1,4 +1,6 @@
-﻿using System;
+﻿///
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +19,17 @@ namespace TextAdventureSummative
         int scene = 0;
         Random randGen = new Random();
         int attackValue, stealthValue;
-
+        SoundPlayer scene2 = new SoundPlayer(Properties.Resources.Scene_2);
+        SoundPlayer scene4 = new SoundPlayer(Properties.Resources.Scene_4);
+        SoundPlayer scene5 = new SoundPlayer(Properties.Resources.Scene_5);
+        SoundPlayer scene8 = new SoundPlayer(Properties.Resources.Scene_8);
+        SoundPlayer scene11 = new SoundPlayer(Properties.Resources.Scene_11);
+        SoundPlayer scene13 = new SoundPlayer(Properties.Resources.Scene_13);
+        SoundPlayer scene16 = new SoundPlayer(Properties.Resources.Scene_16);
+        SoundPlayer scene20 = new SoundPlayer(Properties.Resources.Scene_20);
+        SoundPlayer scene22 = new SoundPlayer(Properties.Resources.Scene_22);
+        SoundPlayer scene25 = new SoundPlayer(Properties.Resources.Scene_25);
+        SoundPlayer scene26 = new SoundPlayer(Properties.Resources.Scene_26_end_);
         public Form1()
         {
             InitializeComponent();
@@ -46,15 +58,12 @@ namespace TextAdventureSummative
 
                 else if (scene == 3)
                 {
-                    Thread.Sleep(5000);
-                    Refresh();
-
                     attackValue = randGen.Next(1, 11);
                     if (attackValue >= 4)
                     {
                         scene = 6;
                     }
-                    else if (attackValue < 4)
+                    else 
                     {
                         scene = 5;
                     }
@@ -145,15 +154,13 @@ namespace TextAdventureSummative
 
                 else if (scene == 12)
                 {
-                    Thread.Sleep(5000);
-                    Refresh();
 
                     attackValue = randGen.Next(1, 11);
                     if (attackValue >= 4)
                     {
                         scene = 14;
                     }
-                    else if (attackValue < 4)
+                    else
                     {
                         scene = 13;
                     }
@@ -174,15 +181,12 @@ namespace TextAdventureSummative
 
                 else if (scene == 17)
                 {
-                    Thread.Sleep(5000);
-                    Refresh();
-
                     stealthValue = randGen.Next(1, 11);
                     if (stealthValue >= 4)
                     {
                         scene = 21;
                     }
-                    else if (stealthValue < 4)
+                    else
                     {
                         scene = 20;
                     }
@@ -226,7 +230,7 @@ namespace TextAdventureSummative
                     {
                         scene = 19;
                     }
-                    else if (attackValue < 4)
+                    else
                     {
                         scene = 22;
                     }
@@ -246,7 +250,7 @@ namespace TextAdventureSummative
                     blueLabel.Text = "STAY";
                     break;
                 case 1:
-                    outputLabel.Text = "You drop down into a long hallway and seea light in the distance. Do you return to grab your torch or start walking?";
+                    outputLabel.Text = "You drop down into a long hallway and see a light in the distance. Do you return to grab your torch or start walking?";
                     redLabel.Text = "GET TORCH";
                     blueLabel.Text = "WALK";
                     break;
@@ -254,21 +258,33 @@ namespace TextAdventureSummative
                     outputLabel.Text = "You crawl into a ball and win! Congrats!";
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
+                    Refresh();
+                    scene2.Play();
+                    Thread.Sleep(5000);
+                    scene2.Stop();
                     break;
                 case 3:
                     outputLabel.Text = "You grab your torch and slowly walk down the hallway. You jump the pit. A Native jumps out and attacks you. You fight back.";
-                    redLabel.Text = "PLEASE WAIT";
+                    redLabel.Text = "CONTINUE";
                     blueLabel.Text = "";
                     break;
                 case 4:
                     outputLabel.Text = "You start walking but end up falling into a pit of spikes left by the Natives. You died.";
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
+                    Refresh();
+                    scene4.Play();
+                    Thread.Sleep(7000);
+                    scene4.Stop();
                     break;
                 case 5:
                     outputLabel.Text = "You die due to your attack being too weak. Should've taken karate when you were little";
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
+                    Refresh();
+                    scene5.Play();
+                    Thread.Sleep(6000);
+                    scene5.Stop();
                     break;
                 case 6:
                     outputLabel.Text = "You mercilessly beat the Native and continue to the light. You find a room with a stream and more Natives. Do you, Stealth Kill the Natives, Fight them head on, or use the stream to swim past?";
@@ -287,6 +303,10 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene8.Play();
+                    Thread.Sleep(8000);
+                    scene8.Stop();
                     break;
                 case 9:
                     outputLabel.Text = "You killed them and got away. What did you think was gonna happen?";
@@ -305,6 +325,10 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene11.Play();
+                    Thread.Sleep(8000);
+                    scene11.Stop();
                     break;
                 case 12:
                     outputLabel.Text = "The exit door slams shut but you manage to find a grappling hook and attach it to a grate over head. Natives suddenly approach out of nowhere. Do you fight or climb up the grappling hook?";
@@ -317,6 +341,10 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene13.Play();
+                    Thread.Sleep(9000);
+                    scene13.Stop();
                     break;
                 case 14:
                     outputLabel.Text = " You kill all of the Natives and start climbing the rope.";
@@ -335,6 +363,10 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene16.Play();
+                    Thread.Sleep(10000);
+                    scene16.Stop();
                     break;
                 case 17:
                     outputLabel.Text = "You successfully break open the grate and make it to the surface where there are more Natives. Do you fight the Natives head on, sneak past, or stealth kill them all?";
@@ -359,6 +391,10 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene20.Play();
+                    Thread.Sleep(11000);
+                    scene20.Stop();
                     break;
                 case 21:
                     outputLabel.Text = "You stealthily killed everyone and make a mad dash to the path ahead. Good Job lil' ninja.";
@@ -371,6 +407,10 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "";
                     greenLabel.Text = "CONTINUE";
+                    Refresh();
+                    scene22.Play();
+                    Thread.Sleep(13000);
+                    scene22.Stop();
                     break;
                 case 23:
                     outputLabel.Text = "You now come to a split in the road. Do you, go left or right? Don't mess it up now. only one answer is RIGHT";
@@ -389,12 +429,20 @@ namespace TextAdventureSummative
                     redLabel.Text = "";
                     blueLabel.Text = "CONTINUE";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene25.Play();
+                    Thread.Sleep(32000);
+                    scene25.Stop();
                     break;
                 case 26:
                     outputLabel.Text = "PLAY AGAIN?";
                     redLabel.Text = "YES!";
                     blueLabel.Text = "NO.";
                     greenLabel.Text = "";
+                    Refresh();
+                    scene26.Play();
+                    Thread.Sleep(7000);
+                    scene26.Stop();
                     break;
                 default:
                     outputLabel.Text = "You wake up in a dark room with a small trap door and a single torch. Do you go into the trap door or stay in the room?";
