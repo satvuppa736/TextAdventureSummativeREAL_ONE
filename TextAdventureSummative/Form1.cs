@@ -298,7 +298,7 @@ namespace TextAdventureSummative
                     break;
                 case 7:
                     outputLabel.Text = "You get injured by the piranhas but you escape un noticed!";
-                    redLabel.Text = "CONINUE";
+                    redLabel.Text = "CONTINUE";
                     blueLabel.Text = "";
                     greenLabel.Text = "";
                     break;
